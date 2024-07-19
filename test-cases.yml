@@ -270,3 +270,243 @@
     - Ввести новый пароль
   expected-result: |
     Вход осуществляется с помощью нового пароля
+
+- summary: |
+    Cовместимость с Google Chrome LV
+  requirement: |
+    Проверка совместимости сайта с Google Chrome LV
+  prerequisites:
+    no data
+  test-data: |
+    empty   
+  steps:
+    - Открыть Browserstack
+    - Выбрать ОС Windows 10
+    - Выбрать Google Chrome LV
+    - Ввести URL тестируемого приложения
+  expected-result: |
+    Элементы страницы не должны переноситься, исчезать, менять свою ширину. Все интерактивные элементы должны адекватно работать
+
+- summary: |
+    Cовместимость с Google Chrome PV
+  requirement: |
+    Проверка совместимости сайта с Google Chrome PV
+  prerequisites:
+    no data
+  test-data: |
+    empty  
+  steps:
+    - Открыть Browserstack
+    - Выбрать ОС Windows 10
+    - Выбрать Google Chrome PV
+    - Ввести URL тестируемого приложения
+  expected-result: |
+    Элементы страницы не должны переноситься, исчезать, менять свою ширину. Все интерактивные элементы должны адекватно работать
+
+- summary: |
+    Cовместимость с Safari LV
+  requirement: |
+    Проверка совместимости сайта с Safari LV
+  prerequisites:
+    Установленный браузер Safari LV
+  test-data: |
+    empty    
+  steps:
+    - Открыть браузер Safari LV
+    - Ввести URL тестируемого приложения
+  expected-result: |
+    Элементы страницы не должны переноситься, исчезать, менять свою ширину. Все интерактивные элементы должны адекватно работать
+
+- summary: |
+    Cовместимость с Safari PV
+  requirement: |
+    Проверка совместимости сайта с Safari PV
+  prerequisites:
+    no data
+  test-data: |
+    empty   
+  steps:
+    - Открыть Browserstack
+    - Выбрать MacOS Sonoma
+    - Выбрать Safari PV
+    - Ввести URL тестируемого приложения
+  expected-result: |
+    Элементы страницы не должны переноситься, исчезать, менять свою ширину. Все интерактивные элементы должны адекватно работать
+
+- summary: |
+    Cовместимость с Firefox LV
+  requirement: |
+    Проверка совместимости сайта с Firefox LV
+  prerequisites:
+    Установленный браузер Firefox версии LV
+  test-data: |
+    empty    
+  steps:
+    - Открыть браузер Firefox LV
+    - Ввести URL сайта
+  expected-result: |
+    Элементы страницы не должны переноситься, исчезать, менять свою ширину. Все интерактивные элементы должны адекватно работать
+
+- summary: |
+    Cовместимость с Firefox PV
+  requirement: |
+    Проверка совместимости сайта с Firefox PV
+  prerequisites:
+    no data
+  test-data: |
+    empty   
+  steps:
+    - Открыть Browserstack
+    - Выбрать MacOS Sonoma
+    - Выбрать Firefox PV
+    - Ввести URL тестируемого приложения
+  expected-result: |
+    Элементы страницы не должны переноситься, исчезать, менять свою ширину. Все интерактивные элементы должны адекватно работать
+
+- summary: |
+    Главная страница доска лидеров за неделю
+  requirement: |
+    Проверка есть ли доска лидеров на главной странице, например, первые 7 
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - no data
+  expected-result: |
+    На главной странице есть доска лидеров за неделю
+
+- summary: |
+    Главная страница доска лидеров за месяц
+  requirement: |
+    Проверка есть ли доска лидеров на главной странице, например, первые 7 
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на MONTH
+  expected-result: |
+    На главной странице есть доска лидеров за месяц
+
+- summary: |
+    Главная страница доска лидеров за месяц
+  requirement: |
+    Проверка есть ли доска лидеров на главной странице, например, первые 7 
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на MONTH
+  expected-result: |
+    На главной странице есть доска лидеров за месяц
+
+- summary: |
+    Главная страница доска лидеров за весь период
+  requirement: |
+    Проверка есть ли доска лидеров на главной странице, например, первые 7 
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на ALL
+  expected-result: |
+    На главной странице есть доска лидеров за весь период
+
+- summary: |
+    Главная страница таблица LOBBY
+  requirement: |
+    Проверка есть ли таблица LOBBY на главной странице
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на LOBBY
+  expected-result: |
+    На главной странице есть таблица LOBBY
+
+- summary: |
+    Главная страница таблица TOURNAMENTS
+  requirement: |
+    Проверка есть ли таблица TOURNAMENTS на главной странице
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на TOURNAMENTS
+  expected-result: |
+    На главной странице есть таблица TOURNAMENTS, состоящая из двух таблиц Live TOURNAMENTS и Completed TOURNAMENTS
+
+- summary: |
+    Главная страница таблица HISTORY
+  requirement: |
+    Проверка есть ли таблица HISTORY на главной странице
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на HISTORY
+  expected-result: |
+    На главной странице есть таблица HISTORY
+
+- summary: |
+    Главная страница чат
+  requirement: |
+    Проверка отправки сообщения в чат
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Ввести сообщение
+    - Нажать на Send
+  expected-result: |
+    Сообщение отправляется в чат
+
+- summary: |
+    Главная страница чат слишком длинное сообщение
+  requirement: |
+    Проверка отправки длинного сообщения в чат
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Ввести длинное сообщение, например, 1000 символов
+    - Нажать на Send
+  expected-result: |
+    Сообщение отправляется в чат, макет сайта не изменился
+
+- summary: |
+    Главная страница отображение он-лайн пользователей 
+  requirement: |
+    Проверка отображения он-лайн пользователей
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - No date
+  expected-result: |
+    Отображение он-лайн пользователей
+
+- summary: |
+    Главная страница написать личное сообщение
+  requirement: |
+    Проверка написания личного сообщения
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на иконку сообщения
+    - Выбрать он-лайн пользователя
+    - Ввести сообщение
+    - Нажать на Send
+  expected-result: |
+    Отправится личное сообщение
