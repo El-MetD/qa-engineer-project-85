@@ -1,0 +1,230 @@
+---
+- summary: |
+    Форма регистрации
+  requirement: |
+    Проверка есть ли форма регистрации
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Открыть страницу
+    - Нажать на кнопку Sign Up
+  expected-result: |
+    Должна открыться страница регистрации
+
+- summary: |
+    Успешная регистрация пользователя
+  requirement: |
+    После заполнения всех форм на странице регистарции пользователь должен зарегистрироваться
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Nickname = user0
+    Email = begemot@gmail.com
+    Password = meT9*9
+    Confirmation Password = meT9*9
+  steps:
+    - Вводим Nickname
+    - Вводим Email 
+    - Вводим Password
+    - Вводим Confirmation Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Открывается главная страница
+
+- summary: |
+    Короткое имя пользователя
+  requirement: |
+    Имя пользователя должно содержать от 3 до 16 символов
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Nickname = Aa
+    Email  = crocodil@gmail.com
+    Password = meT9*9
+    Confirmation Password = meT9*9
+  steps:
+    - Вводим Nickname
+    - Вводим Email 
+    - Вводим Password
+    - Вводим Confirmation Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Выводится сообщение о том, что имя пользователя должно содержать от 3 до 16 символов
+
+- summary: |
+    Слишком длинное имя пользователя
+  requirement: |
+    Имя пользователя должно содержать от 3 до 16 символов
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Nickname = AbcdfAbcdfAbcdfAbcdfAbcdf
+    Email  = crocodil@gmail.com
+    Password = meT9*9
+    Confirmation Password = meT9*9
+  steps:
+    - Вводим Nickname
+    - Вводим Email 
+    - Вводим Password
+    - Вводим Confirmation Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Выводится сообщение о том, что имя пользователя должно содержать от 3 до 16 символов
+
+- summary: |
+    Проверка пароля меньше 6 символов
+  requirement: |
+    Пароль должен быть от 6 до 16 символов
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Nickname = Muravei
+    Email = crocodil@gmail.com
+    Password = mT9*9
+    Confirmation Password = mT9*9
+  steps:
+    - Вводим Nickname
+    - Вводим Email 
+    - Вводим Password
+    - Вводим Confirmation Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Выводится сообщение о том, что пароль должен от 6 до 16 символов
+
+- summary: |
+    Проверка пароля больше 16 символов
+  requirement: |
+    Пароль должен быть от 6 до 16 символов
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Nickname = Strekoza
+    Email = strekoza@gmail.com
+    Password = mT9*900000000000
+    Confirmation Password = mT9*900000000000
+  steps:
+    - Вводим Nickname
+    - Вводим Email 
+    - Вводим Password
+    - Вводим Confirmation Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Выводится сообщение о том, что пароль должен от 6 до 16 символов
+
+- summary: |
+    Проверка совпадает ли пароли и подтверджение пароля
+  requirement: |
+    Подтверждение пароля должно совпадать с паролем 
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Nickname = Muravei
+    Email = crocodil@gmail.com
+    Password = mT9*9
+    Confirmation Password = mT9*0
+  steps:
+    - Вводим Nickname
+    - Вводим Email 
+    - Вводим Password
+    - Вводим Confirmation Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Выводится сообщение о том, что подтверждение пароля должно совпадать с паролем 
+
+- summary: |
+    Форма регистрации, ввод с ошибкой, страница не перезагружается
+  requirement: |
+    Повторный ввод данных без перезагрузки 
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+    Nickname = Muravei
+    Email = crocodil@gmail.com
+    Password = mT9*9
+    Confirmation Password = mT9*9
+  steps:
+    - Вводим Nickname
+    - Вводим Email 
+    - Вводим Password
+    - Вводим Confirmation Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Форма регистрации не перезагружается, повторная попытка ввода данных
+
+- summary: |
+    Форма входа
+  requirement: |
+    Проверка есть ли форма входа
+  prerequisites:
+    No data
+  test-data: |
+    Noo data
+  steps:
+    - Открыть страницу
+    - Нажать на кнопку Sign In
+  expected-result: |
+    Должна открыться страница входа с полем для ввода Email, Password и кнопкой Submit
+
+- summary: |
+    Успешный вход пользователя
+  requirement: |
+    При верном вводе почты и пароля пользователь должен попасть на главную страницу
+  prerequisites:
+    Данные пользователя, который уже зарегистрирован
+  test-data: |
+    Email = begemot@gmail.com
+    Password = meT9*9
+  steps:
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Должна открыться главная страница
+
+- summary: |
+    Форма входа, ввод с ошибкой
+  requirement: |
+    Проверка выводится ли ошибка, если неправильно введено почта или пароль
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Email = strekoza@gmail.com
+    Пароль = meT9$0
+  steps:
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Форма входа пишет ошибку
+
+- summary: |
+    Форма входа, ввод с ошибкой, страница не перезагружается
+  requirement: |
+    Повторный ввод данных без перезагрузки 
+  prerequisites:
+    Данные пользователя, который не зарегистрирован
+  test-data: |
+    Email = strekoza@gmail.com
+    Пароль = meT9$0
+  steps:
+    - Вводим Email
+    - Вводим Password
+    - Нажимаем кнопку Submit
+  expected-result: |
+    Форма входа не перезагружается, повторная попытка ввода данных
+
+- summary: |
+    Запоминать авторизованного пользователя
+  requirement: |
+    Пользователь должен оставаться авторизованным после перезагрузки 
+  prerequisites:
+    Пользователь вошел в систему
+  test-data: |
+    Email = begemot@gmail.com
+    Password = meT9*9
+  steps:
+    - Перезагрузить страницу
+  expected-result: |
+    Пользователь должен оставаться авторизованным после перезагрузки
+
