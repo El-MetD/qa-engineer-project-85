@@ -25,11 +25,11 @@
     Password = meT9*9
     Confirmation Password = meT9*9
   steps:
-    - Вводим Nickname
-    - Вводим Email 
-    - Вводим Password
-    - Вводим Confirmation Password
-    - Нажимаем кнопку Submit
+    - Ввести Nickname
+    - Ввести Email 
+    - Ввести Password
+    - Ввести Confirmation Password
+    - Нажать кнопку Submit
   expected-result: |
     Открывается главная страница
 
@@ -45,11 +45,11 @@
     Password = meT9*9
     Confirmation Password = meT9*9
   steps:
-    - Вводим Nickname
-    - Вводим Email 
-    - Вводим Password
-    - Вводим Confirmation Password
-    - Нажимаем кнопку Submit
+    - Ввести Nickname
+    - Ввести Email 
+    - Ввести Password
+    - Ввести Confirmation Password
+    - Нажать кнопку Submit
   expected-result: |
     Выводится сообщение о том, что имя пользователя должно содержать от 3 до 16 символов
 
@@ -65,11 +65,11 @@
     Password = meT9*9
     Confirmation Password = meT9*9
   steps:
-    - Вводим Nickname
-    - Вводим Email 
-    - Вводим Password
-    - Вводим Confirmation Password
-    - Нажимаем кнопку Submit
+    - Ввести Nickname
+    - Ввести Email 
+    - Ввести Password
+    - Ввести Confirmation Password
+    - Нажать кнопку Submit
   expected-result: |
     Выводится сообщение о том, что имя пользователя должно содержать от 3 до 16 символов
 
@@ -85,11 +85,11 @@
     Password = mT9*9
     Confirmation Password = mT9*9
   steps:
-    - Вводим Nickname
-    - Вводим Email 
-    - Вводим Password
-    - Вводим Confirmation Password
-    - Нажимаем кнопку Submit
+    - Ввести Nickname
+    - Ввести Email 
+    - Ввести Password
+    - Ввести Confirmation Password
+    - Нажать кнопку Submit
   expected-result: |
     Выводится сообщение о том, что пароль должен от 6 до 16 символов
 
@@ -105,11 +105,11 @@
     Password = mT9*900000000000
     Confirmation Password = mT9*900000000000
   steps:
-    - Вводим Nickname
-    - Вводим Email 
-    - Вводим Password
-    - Вводим Confirmation Password
-    - Нажимаем кнопку Submit
+    - Ввести Nickname
+    - Ввести Email 
+    - Ввести Password
+    - Ввести Confirmation Password
+    - Нажать кнопку Submit
   expected-result: |
     Выводится сообщение о том, что пароль должен от 6 до 16 символов
 
@@ -125,11 +125,11 @@
     Password = mT9*9
     Confirmation Password = mT9*0
   steps:
-    - Вводим Nickname
-    - Вводим Email 
-    - Вводим Password
-    - Вводим Confirmation Password
-    - Нажимаем кнопку Submit
+    - Ввести Nickname
+    - Ввести Email 
+    - Ввести Password
+    - Ввести Confirmation Password
+    - Нажать кнопку Submit
   expected-result: |
     Выводится сообщение о том, что подтверждение пароля должно совпадать с паролем 
 
@@ -139,18 +139,45 @@
     Повторный ввод данных без перезагрузки 
   prerequisites:
     Данные пользователя, который не зарегистрирован
+  test-data: |
     Nickname = Muravei
     Email = crocodil@gmail.com
     Password = mT9*9
     Confirmation Password = mT9*9
   steps:
-    - Вводим Nickname
-    - Вводим Email 
-    - Вводим Password
-    - Вводим Confirmation Password
-    - Нажимаем кнопку Submit
+    - Ввести Nickname
+    - Ввести Email 
+    - Ввести Password
+    - Ввести Confirmation Password
+    - Нажать кнопку Submit
   expected-result: |
     Форма регистрации не перезагружается, повторная попытка ввода данных
+
+- summary: |
+    Вход через гитхаб
+  requirement: |
+    Вход через аккаунт GitHub
+  prerequisites:
+    Иметь аккаунт на гитхабе
+  test-data: |
+    no data
+  steps:
+    - Нажать на Sign In with Github
+  expected-result: |
+     Открывается главная страница
+
+- summary: |
+    Вход через Discord
+  requirement: |
+    Вход через аккаунт GitHub
+  prerequisites:
+    Иметь аккаунт на дискорде
+  test-data: |
+    no data
+  steps:
+    - Нажать на Sign In with Discord
+  expected-result: |
+     Открывается главная страница
 
 - summary: |
     Форма входа
@@ -176,9 +203,9 @@
     Email = begemot@gmail.com
     Password = meT9*9
   steps:
-    - Вводим Email
-    - Вводим Password
-    - Нажимаем кнопку Submit
+    - Ввести Email
+    - Ввести Password
+    - Нажать на кнопку Submit
   expected-result: |
     Должна открыться главная страница
 
@@ -192,9 +219,9 @@
     Email = strekoza@gmail.com
     Пароль = meT9$0
   steps:
-    - Вводим Email
-    - Вводим Password
-    - Нажимаем кнопку Submit
+    - Ввести Email
+    - Ввести Password
+    - Нажать на кнопку Submit
   expected-result: |
     Форма входа пишет ошибку
 
@@ -208,9 +235,9 @@
     Email = strekoza@gmail.com
     Пароль = meT9$0
   steps:
-    - Вводим Email
-    - Вводим Password
-    - Нажимаем кнопку Submit
+    - Ввести Email
+    - Ввести Password
+    - Нажать на кнопку Submit
   expected-result: |
     Форма входа не перезагружается, повторная попытка ввода данных
 
@@ -228,3 +255,18 @@
   expected-result: |
     Пользователь должен оставаться авторизованным после перезагрузки
 
+- summary: |
+    Форма входа, востановление пароля
+  requirement: |
+    восстановить пароль через почту 
+  prerequisites:
+    Данные пользователя, который зарегистрирован
+  test-data: |
+    Email = strekoza@gmail.com
+  steps:
+    - Ввести Email
+    - Открыть почту
+    - Перейти по ссылке
+    - Ввести новый пароль
+  expected-result: |
+    Вход осуществляется с помощью нового пароля
