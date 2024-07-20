@@ -718,3 +718,17 @@
     - Нажать Create
   expected-result: |
     Создается новый турнир
+
+- summary: |
+    Sign Out
+  requirement: |
+    Проверка выхода из приложения
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Sign Out в выпадающем меню
+  expected-result: |
+    Пользователь выходит из приложения
