@@ -510,3 +510,211 @@
     - Нажать на Send
   expected-result: |
     Отправится личное сообщение
+
+- summary: |
+    Главная страница создать игру
+  requirement: |
+    Проверка содается ли игра
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на кнопку CREATE A GAME
+  expected-result: |
+    Откроется окно Create a game
+
+- summary: |
+    Окно Create a game, выбор уровня сложности
+  requirement: |
+    Проверка выбора уровня сложности игры
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Выбрать Level, например, easy
+  expected-result: |
+    Выбирается уровень сложности игры
+
+- summary: |
+    Окно Create a game, выбор оппонента
+  requirement: |
+    Проверка выбора оппонента
+  prerequisites:
+    Выбран уровень сложности
+  test-data: |
+    No data
+  steps:
+    - Выбрать Game Type, например, With a bot
+  expected-result: |
+    Выбирается оппонент для игры
+
+- summary: |
+    Окно Create a game, выбор времени
+  requirement: |
+    Проверка выбора максимального количества времени для игры
+  prerequisites:
+    Выбран уровень сложности и оппонент
+  test-data: |
+    No data
+  steps:
+    - Выбрать Time control, например, 10 minutes
+  expected-result: |
+    Выбирается длительность игры по времени
+
+- summary: |
+    Окно Create a game, выбор игры/задания по названию
+  requirement: |
+    Проверка выбора игры/задания по названию 
+  prerequisites:
+    Выбран уровень сложности, оппонент и время
+  test-data: |
+    No data
+  steps:
+    - Ввести название игры, например, rect_area
+    - Нажать Create battle
+  expected-result: |
+    Открывается страница игры game page
+
+- summary: |
+    Окно Create a game, выбор игры/задания по тегу
+  requirement: |
+    Проверка выбора игры/задания по тегу
+  prerequisites:
+    Выбран уровень сложности, оппонент и время
+  test-data: |
+    No data
+  steps:
+    - Выбрать тег, например, math 
+    - Нажать на поле ввода
+    - Выбрать игру, например, rect_area
+    - Нажать Create battle
+  expected-result: |
+    Открывается страница игры game page
+
+- summary: |
+    Game page, поле Task
+  requirement: |
+    Проверка есть ли описание задания
+  prerequisites:
+    Выбрана игра, например, rect_area
+  test-data: |
+    No data
+  steps:
+    - Нажать на Task
+  expected-result: |
+    Написано описание задания/игры
+
+- summary: |
+    Game page, поле OUTPUT
+  requirement: |
+    Выполняется ли проверка написанного кода
+  prerequisites:
+    Выбрана игра, например, rect_area и написан код в редакторе кода
+  test-data: |
+    Код = "const _ = require("lodash"); const R = require("rambda"); const solution = (width, length) => {return 0;}; module.exports = solution;"
+  steps:
+    - Нажать на Run
+  expected-result: |
+    Выходит результат игры, например, passed или failure
+
+- summary: |
+    Game page, выбор языка программирования
+  requirement: |
+    Проверка выбора языка программирования
+  prerequisites:
+    Выбрана игра, например, rect_area
+  test-data: |
+    No data
+  steps:
+    - Выбрать язык программирования, например, Python
+  expected-result: |
+    Выбирается язык программирования
+
+- summary: |
+    Кнопка Codebattle в шапке страницы
+  requirement: |
+    Проверка Кнопки Codebattle в шапке страницы
+  prerequisites:
+    Находиться на странице игры
+  test-data: |
+    No data
+  steps:
+    - Нажать на кнопку Codebattle в шапке страницы
+  expected-result: |
+    Открывается главная страница
+
+- summary: |
+    Кнопка My Profile
+  requirement: |
+    Проверка Кнопки My Profile
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на My Profile в выпадающем меню
+  expected-result: |
+    Открывается страница профиля пользователя
+
+- summary: |
+    Кнопка Settings
+  requirement: |
+    Проверка Кнопки Settings
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Settings в выпадающем меню
+  expected-result: |
+    Открывается страница настроек пользователя
+
+- summary: |
+    Кнопка User rating
+  requirement: |
+    Проверка Кнопки User rating
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на User rating в выпадающем меню
+  expected-result: |
+    Открывается страница рейтинга пользователей
+
+- summary: |
+    Кнопка Tournaments
+  requirement: |
+    Проверка Кнопки Tournaments
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Tournaments в выпадающем меню
+  expected-result: |
+    Открывается страница c турнирами
+
+- summary: |
+    Create a new tournament
+  requirement: |
+    Проверка создания нового турнира
+  prerequisites:
+    No data
+  test-data: |
+    Name = "abracadabra"
+    Type = "individual"
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Tournaments в выпадающем меню
+    - Ввести Name
+    - Ввести Type
+    - Нажать Create
+  expected-result: |
+    Создается новый турнир
