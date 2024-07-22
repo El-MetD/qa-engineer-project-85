@@ -1,0 +1,192 @@
+---
+- summary: |
+    Форма регистрации
+  status: pass
+
+- summary: |
+    Успешная регистрация пользователя
+  status: pass
+
+- summary: |
+    Короткое имя пользователя
+  status: pass
+
+- summary: |
+    Слишком длинное имя пользователя
+  status: pass
+
+- summary: |
+    Проверка пароля меньше 6 символов
+  status: pass
+
+- summary: |
+    Проверка пароля больше 16 символов
+  status: pass
+
+- summary: |
+    Проверка совпадает ли пароли и подтверджение пароля
+  status: pass
+
+- summary: |
+    Форма регистрации, ввод с ошибкой, страница не перезагружается
+  status: pass
+
+- summary: |
+    Вход через гитхаб
+  status: pass
+
+- summary: |
+    Вход через Discord
+  status: pass
+
+- summary: |
+    Форма входа
+  status: pass
+
+- summary: |
+    Успешный вход пользователя
+  status: pass
+
+- summary: |
+    Форма входа, ввод с ошибкой
+  status: pass
+
+- summary: |
+    Форма входа, ввод с ошибкой, страница не перезагружается
+  status: pass
+
+- summary: |
+    Запоминать авторизованного пользователя
+  status: pass
+
+- summary: |
+    Форма входа, востановление пароля
+  status: pass
+
+- summary: |
+    Cовместимость с Google Chrome LV
+  status: pass
+
+- summary: |
+    Cовместимость с Google Chrome PV
+  status: pass
+
+- summary: |
+    Cовместимость с Safari LV
+  status: pass
+
+- summary: |
+    Cовместимость с Safari PV
+  status: pass
+
+- summary: |
+    Cовместимость с Firefox LV
+  status: pass
+
+- summary: |
+    Cовместимость с Firefox PV
+  status: pass
+
+- summary: |
+    Главная страница доска лидеров за неделю
+  status: pass
+
+- summary: |
+    Главная страница доска лидеров за месяц
+  status: pass
+
+- summary: |
+    Главная страница доска лидеров за весь период
+  status: pass
+
+- summary: |
+    Главная страница таблица LOBBY
+  status: pass
+
+- summary: |
+    Главная страница таблица TOURNAMENTS
+  status: pass
+
+- summary: |
+    Главная страница таблица HISTORY
+  status: pass
+
+- summary: |
+    Главная страница чат
+  status: pass
+
+- summary: |
+    Главная страница чат слишком длинное сообщение
+  status: pass
+
+- summary: |
+    Главная страница отображение он-лайн пользователей
+  status: pass
+
+- summary: |
+    Главная страница написать личное сообщение
+  status: pass
+  
+- summary: |
+    Главная страница создать игру
+  status: pass
+
+- summary: |
+    Окно Create a game, выбор уровня сложности
+  status: pass
+
+- summary: |
+    Окно Create a game, выбор оппонента
+  status: pass
+
+- summary: |
+    Окно Create a game, выбор времени
+  status: pass
+
+- summary: |
+    Окно Create a game, выбор игры/задания по названию
+  status: pass
+
+- summary: |
+    Окно Create a game, выбор игры/задания по тегу
+  status: pass
+  
+- summary: |
+    Game page, поле Task
+  status: pass
+    
+- summary: |
+    Game page, поле OUTPUT
+  status: pass
+    
+- summary: |
+    Game page, выбор языка программирования
+  status: pass
+    
+- summary: |
+    Кнопка Codebattle в шапке страницы
+  status: pass
+    
+- summary: |
+    Кнопка My Profile
+  status: pass
+    
+- summary: |
+    Кнопка Settings
+  status: pass
+    
+- summary: |
+    Кнопка User rating
+  status: pass
+      
+- summary: |
+    Кнопка Tournaments
+  status: pass
+      
+- summary: |
+    Create a new tournament
+  status: pass
+      
+- summary: |
+    Sign Out
+  status: pass  
