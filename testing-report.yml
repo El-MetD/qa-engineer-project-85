@@ -168,21 +168,45 @@
   status: pass
     
 - summary: |
-    Кнопка My Profile
+    Завершенные игры пользователя
   status: pass
     
 - summary: |
-    Кнопка Settings
+    Изменение имени в настройках пользователя
   status: pass
     
 - summary: |
-    Кнопка User rating
+    Изменение языка программирования пользователя в настройках
+  status: pass
+
+- summary: |
+     Изменение клана пользователя в настройках
+  status: pass
+
+- summary: |
+     Изменение звука в настройках
+  status: fail
+
+- summary: |
+     Изменение уровня громкости звука в настройках
+  status: pass
+    
+- summary: |
+     Отвзять аккаунт Github
+  status: fail
+
+- summary: |
+    Поиск бота с помощью Чек-бокса With bots
   status: pass
       
 - summary: |
-    Кнопка Tournaments
+    Кнопка Create new task
+  status: fail
+
+- summary: |
+    Кнопка Create new task pack
   status: pass
-      
+
 - summary: |
     Create a new tournament
   status: pass
