@@ -633,23 +633,24 @@
     Открывается главная страница
 
 - summary: |
-    Кнопка My Profile
+    Завершенные игры пользователя
   requirement: |
-    Проверка Кнопки My Profile
+    Проверка показываются ли завершенные игры пользователя
   prerequisites:
-    No data
+    Пользователь сыграл несколько игр
   test-data: |
     No data
   steps:
     - Нажать на пользователя в шапке страницы
     - Нажать на My Profile в выпадающем меню
+    - Нажать на COMPLETED GAMES
   expected-result: |
-    Открывается страница профиля пользователя
+    Открывается таблица игр, которые завершил пользователь
 
 - summary: |
-    Кнопка Settings
+    Изменение имени в настройках пользователя
   requirement: |
-    Проверка Кнопки Settings
+    Проверка изменения значения в поле Your name
   prerequisites:
     No data
   test-data: |
@@ -657,13 +658,94 @@
   steps:
     - Нажать на пользователя в шапке страницы
     - Нажать на Settings в выпадающем меню
+    - Изменить значение в поле Your name
+    - Нажать на Save
   expected-result: |
-    Открывается страница настроек пользователя
+    Имя пользователя изменяется
 
 - summary: |
-    Кнопка User rating
+    Изменение языка программирования пользователя в настройках
   requirement: |
-    Проверка Кнопки User rating
+    Проверка изменения значения в поле Your weapon
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Settings в выпадающем меню
+    - Изменить значение в поле Your weapon
+    - Нажать на Save
+  expected-result: |
+    Язык программирования пользователя изменяется
+
+- summary: |
+    Изменение клана пользователя в настройках
+  requirement: |
+    Проверка изменения значения в поле Your clan
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Settings в выпадающем меню
+    - Изменить значение в поле Your clan
+    - Нажать на Save
+  expected-result: |
+    Клан пользователя изменяется
+
+- summary: |
+    Изменение звука в настройках
+  requirement: |
+    Проверка изменения звука
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Settings в выпадающем меню
+    - Выбрать звук, например, Standart
+    - Нажать на Save
+  expected-result: |
+    Изменится звук
+
+- summary: |
+    Изменение уровня громкости звука в настройках
+  requirement: |
+    Проверка изменения уровни громкости звука
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Settings в выпадающем меню
+    - Изменить уровень громкости
+    - Нажать на Save
+  expected-result: |
+    Изменится уровень громкости звука
+
+- summary: |
+    Отвзять аккаунт Github
+  requirement: |
+    Проверка работает ли ссылка Unlink Github
+  prerequisites:
+    Зарегистрироваться с помощью аккаунта Github
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Settings в выпадающем меню
+    - Нажать на Unlink Github
+  expected-result: |
+    Пользователь выйдет из приложения
+
+- summary: |
+    Поиск бота с помощью Чек-бокса With bots
+  requirement: |
+    Проверка Чек-бокса With bots
   prerequisites:
     No data
   test-data: |
@@ -671,13 +753,15 @@
   steps:
     - Нажать на пользователя в шапке страницы
     - Нажать на User rating в выпадающем меню
+    - Включить Чек-бокс With bots
+    - Ввести имя бота, например, LiskovLambda в поле поиска
   expected-result: |
-    Открывается страница рейтинга пользователей
+    Таблица рейтинга выводит искомого бота
 
 - summary: |
-    Кнопка Tournaments
+    Кнопка Create new task
   requirement: |
-    Проверка Кнопки Tournaments
+    Проверка создания новой задачи
   prerequisites:
     No data
   test-data: |
@@ -685,8 +769,34 @@
   steps:
     - Нажать на пользователя в шапке страницы
     - Нажать на Tournaments в выпадающем меню
+    - Нажать на Create new task
+    - Ввести название задачи
+    - Ввести описание задачи
+    - Создать Input Parameters type
+    - Создать Output Parameter type
+    - Нажать на Save
   expected-result: |
-    Открывается страница c турнирами
+    Создается новая задча/игра
+
+- summary: |
+    Кнопка Create new task pack
+  requirement: |
+    Проверка создания нового пакета задач
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на пользователя в шапке страницы
+    - Нажать на Tournaments в выпадающем меню
+    - Нажать на Task packs
+    - Нажать на Create new task pack
+    - Ввести Name
+    - Выбрать Visibility
+    - Ввести Task_ids
+    - Нажать на Save
+  expected-result: |
+    Создается новвый пакет задач
 
 - summary: |
     Create a new tournament
