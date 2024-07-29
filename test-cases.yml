@@ -58,7 +58,6 @@
     Данные пользователя, который не зарегистрирован
   test-data: |
     Password = mT9*9
-    Confirmation Password = mT9*9
   steps:
     - Ввести Nickname
     - Ввести Email 
@@ -76,7 +75,6 @@
     Данные пользователя, который не зарегистрирован
   test-data: |
     Password = mT9*900000000000
-    Confirmation Password = mT9*900000000000
   steps:
     - Ввести Nickname
     - Ввести Email 
