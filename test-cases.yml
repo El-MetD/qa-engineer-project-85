@@ -1,29 +1,12 @@
 ---
 - summary: |
-    Форма регистрации
-  requirement: |
-    Проверка есть ли форма регистрации
-  prerequisites:
-    No data
-  test-data: |
-    No data
-  steps:
-    - Открыть страницу
-    - Нажать на кнопку Sign Up
-  expected-result: |
-    Должна открыться страница регистрации
-
-- summary: |
     Успешная регистрация пользователя
   requirement: |
     После заполнения всех форм на странице регистарции пользователь должен зарегистрироваться
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
-    Nickname = user0
-    Email = begemot@gmail.com
-    Password = meT9*9
-    Confirmation Password = meT9*9
+    no data
   steps:
     - Ввести Nickname
     - Ввести Email 
@@ -31,19 +14,16 @@
     - Ввести Confirmation Password
     - Нажать кнопку Submit
   expected-result: |
-    Открывается главная страница
+    Пользователь успешно зарегистрирован
 
 - summary: |
-    Короткое имя пользователя
+    Проверка регистрации пользователя с ником менее 3 символов
   requirement: |
     Имя пользователя должно содержать от 3 до 16 символов
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
     Nickname = Aa
-    Email  = crocodil@gmail.com
-    Password = meT9*9
-    Confirmation Password = meT9*9
   steps:
     - Ввести Nickname
     - Ввести Email 
@@ -51,19 +31,16 @@
     - Ввести Confirmation Password
     - Нажать кнопку Submit
   expected-result: |
-    Выводится сообщение о том, что имя пользователя должно содержать от 3 до 16 символов
+    Пользователь не зарегистрирован и видит ошибку
 
 - summary: |
-    Слишком длинное имя пользователя
+    Проверка регистрации пользователя с ником более 16 символов
   requirement: |
     Имя пользователя должно содержать от 3 до 16 символов
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
     Nickname = AbcdfAbcdfAbcdfAbcdfAbcdf
-    Email  = crocodil@gmail.com
-    Password = meT9*9
-    Confirmation Password = meT9*9
   steps:
     - Ввести Nickname
     - Ввести Email 
@@ -71,17 +48,15 @@
     - Ввести Confirmation Password
     - Нажать кнопку Submit
   expected-result: |
-    Выводится сообщение о том, что имя пользователя должно содержать от 3 до 16 символов
+    Пользователь не зарегистрирован и видит ошибку
 
 - summary: |
-    Проверка пароля меньше 6 символов
+    Проверка регистрации пользователя с паролем менее 6 символов
   requirement: |
     Пароль должен быть от 6 до 16 символов
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
-    Nickname = Muravei
-    Email = crocodil@gmail.com
     Password = mT9*9
     Confirmation Password = mT9*9
   steps:
@@ -91,17 +66,15 @@
     - Ввести Confirmation Password
     - Нажать кнопку Submit
   expected-result: |
-    Выводится сообщение о том, что пароль должен от 6 до 16 символов
+    Пользователь не зарегистрирован и видит ошибку
 
 - summary: |
-    Проверка пароля больше 16 символов
+    Проверка регистрации пользователя с паролем более 16 символов
   requirement: |
     Пароль должен быть от 6 до 16 символов
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
-    Nickname = Strekoza
-    Email = strekoza@gmail.com
     Password = mT9*900000000000
     Confirmation Password = mT9*900000000000
   steps:
@@ -111,17 +84,15 @@
     - Ввести Confirmation Password
     - Нажать кнопку Submit
   expected-result: |
-    Выводится сообщение о том, что пароль должен от 6 до 16 символов
+    Пользователь не зарегистрирован и видит ошибку
 
 - summary: |
-    Проверка совпадает ли пароли и подтверджение пароля
+    Проверка совпадения пароля и подтверджения пароля при регистрации пользователя
   requirement: |
     Подтверждение пароля должно совпадать с паролем 
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
-    Nickname = Muravei
-    Email = crocodil@gmail.com
     Password = mT9*9
     Confirmation Password = mT9*0
   steps:
@@ -131,19 +102,16 @@
     - Ввести Confirmation Password
     - Нажать кнопку Submit
   expected-result: |
-    Выводится сообщение о том, что подтверждение пароля должно совпадать с паролем 
+    Пользователь не зарегистрирован и видит ошибку
 
 - summary: |
-    Форма регистрации, ввод с ошибкой, страница не перезагружается
+    Страница регистрации не сбивает введенные данные при ошибке ввода
   requirement: |
     Повторный ввод данных без перезагрузки 
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
-    Nickname = Muravei
-    Email = crocodil@gmail.com
-    Password = mT9*9
-    Confirmation Password = mT9*9
+    no data
   steps:
     - Ввести Nickname
     - Ввести Email 
@@ -154,67 +122,52 @@
     Форма регистрации не перезагружается, повторная попытка ввода данных
 
 - summary: |
-    Вход через гитхаб
+    Авторизация через GitHub
   requirement: |
-    Вход через аккаунт GitHub
+    Авторизация через аккаунт GitHub
   prerequisites:
-    Иметь аккаунт на гитхабе
+    Произведен вход в аккаунт на GitHub
   test-data: |
     no data
   steps:
     - Нажать на Sign In with Github
   expected-result: |
-     Открывается главная страница
+     Пользователь успешно авторизован через GitHub
 
 - summary: |
-    Вход через Discord
+    Авторизация через Discord
   requirement: |
-    Вход через аккаунт GitHub
+    Авторизация через аккаунт GitHub
   prerequisites:
-    Иметь аккаунт на дискорде
+    Произведен вход в аккаунт на Discord
   test-data: |
     no data
   steps:
     - Нажать на Sign In with Discord
   expected-result: |
-     Открывается главная страница
+     Пользователь успешно авторизован через Discord
 
 - summary: |
-    Форма входа
-  requirement: |
-    Проверка есть ли форма входа
-  prerequisites:
-    No data
-  test-data: |
-    Noo data
-  steps:
-    - Открыть страницу
-    - Нажать на кнопку Sign In
-  expected-result: |
-    Должна открыться страница входа с полем для ввода Email, Password и кнопкой Submit
-
-- summary: |
-    Успешный вход пользователя
+    Успешная авторизация пользователя
   requirement: |
     При верном вводе почты и пароля пользователь должен попасть на главную страницу
   prerequisites:
-    Данные пользователя, который уже зарегистрирован
+    no data
   test-data: |
-    Email = begemot@gmail.com
-    Password = meT9*9
+    no data
   steps:
     - Ввести Email
     - Ввести Password
     - Нажать на кнопку Submit
   expected-result: |
-    Должна открыться главная страница
+    Пользователь успешно авторизован
 
 - summary: |
-    Форма входа, ввод с ошибкой
+    Проверка авторизации незарегистрированного пользователя
   requirement: |
-    Проверка выводится ли ошибка, если неправильно введено почта или пароль
+    Проверка выводится ли ошибка, если неправильно введена почта или пароль
   prerequisites:
-    Данные пользователя, который не зарегистрирован
+    no data
   test-data: |
     Email = strekoza@gmail.com
     Пароль = meT9$0
@@ -223,46 +176,31 @@
     - Ввести Password
     - Нажать на кнопку Submit
   expected-result: |
-    Форма входа пишет ошибку
+    Пользователь не авторизован
 
 - summary: |
-    Форма входа, ввод с ошибкой, страница не перезагружается
+    Страница авторизации не сбивает введенные данные при ошибке ввода
   requirement: |
     Повторный ввод данных без перезагрузки 
   prerequisites:
     Данные пользователя, который не зарегистрирован
   test-data: |
-    Email = strekoza@gmail.com
-    Пароль = meT9$0
+    no data
   steps:
     - Ввести Email
     - Ввести Password
     - Нажать на кнопку Submit
   expected-result: |
-    Форма входа не перезагружается, повторная попытка ввода данных
+    Форма авторизации не перезагружается, повторная попытка ввода данных
 
 - summary: |
-    Запоминать авторизованного пользователя
+    Проверка восстановления пароля
   requirement: |
-    Пользователь должен оставаться авторизованным после перезагрузки 
+    Восстановить пароль через почту 
   prerequisites:
-    Пользователь вошел в систему
+    no data
   test-data: |
-    Email = begemot@gmail.com
-    Password = meT9*9
-  steps:
-    - Перезагрузить страницу
-  expected-result: |
-    Пользователь должен оставаться авторизованным после перезагрузки
-
-- summary: |
-    Форма входа, востановление пароля
-  requirement: |
-    восстановить пароль через почту 
-  prerequisites:
-    Данные пользователя, который зарегистрирован
-  test-data: |
-    Email = strekoza@gmail.com
+    no data
   steps:
     - Ввести Email
     - Открыть почту
@@ -364,9 +302,9 @@
     Элементы страницы не должны переноситься, исчезать, менять свою ширину. Все интерактивные элементы должны адекватно работать
 
 - summary: |
-    Главная страница доска лидеров за неделю
+    Проверка сортировки лидеров за неделю
   requirement: |
-    Проверка есть ли доска лидеров на главной странице, например, первые 7 
+    Проверка отображения доски лидеров за неделю на главной странице, например, первые 7 
   prerequisites:
     No data
   test-data: |
@@ -374,12 +312,12 @@
   steps:
     - no data
   expected-result: |
-    На главной странице есть доска лидеров за неделю
+    Отображаются лидеры за неделю в порядке убывания
 
 - summary: |
-    Главная страница доска лидеров за месяц
+    Проверка сортировки лидеров за месяц
   requirement: |
-    Проверка есть ли доска лидеров на главной странице, например, первые 7 
+    Проверка отображения доски лидеров за месяц, например, первые 7 
   prerequisites:
     No data
   test-data: |
@@ -387,12 +325,12 @@
   steps:
     - Нажать на MONTH
   expected-result: |
-    На главной странице есть доска лидеров за месяц
+    Отображаются лидеры за месяц в порядке убывания
 
 - summary: |
-    Главная страница доска лидеров за весь период
+    Проверка сортировки лидеров за весь период
   requirement: |
-    Проверка есть ли доска лидеров на главной странице, например, первые 7 
+    Проверка отображения доски лидеров за весь период, например, первые 7 
   prerequisites:
     No data
   test-data: |
@@ -400,49 +338,10 @@
   steps:
     - Нажать на ALL
   expected-result: |
-    На главной странице есть доска лидеров за весь период
+    Отображаются лидеры за весь период в порядке убывания
 
 - summary: |
-    Главная страница таблица LOBBY
-  requirement: |
-    Проверка есть ли таблица LOBBY на главной странице
-  prerequisites:
-    No data
-  test-data: |
-    No data
-  steps:
-    - Нажать на LOBBY
-  expected-result: |
-    На главной странице есть таблица LOBBY
-
-- summary: |
-    Главная страница таблица TOURNAMENTS
-  requirement: |
-    Проверка есть ли таблица TOURNAMENTS на главной странице
-  prerequisites:
-    No data
-  test-data: |
-    No data
-  steps:
-    - Нажать на TOURNAMENTS
-  expected-result: |
-    На главной странице есть таблица TOURNAMENTS, состоящая из двух таблиц Live TOURNAMENTS и Completed TOURNAMENTS
-
-- summary: |
-    Главная страница таблица HISTORY
-  requirement: |
-    Проверка есть ли таблица HISTORY на главной странице
-  prerequisites:
-    No data
-  test-data: |
-    No data
-  steps:
-    - Нажать на HISTORY
-  expected-result: |
-    На главной странице есть таблица HISTORY
-
-- summary: |
-    Главная страница чат
+    Проверка отправки сообщения в чат с главной
   requirement: |
     Проверка отправки сообщения в чат
   prerequisites:
@@ -453,37 +352,10 @@
     - Ввести сообщение
     - Нажать на Send
   expected-result: |
-    Сообщение отправляется в чат
+    Сообщение отправлено и отображается в чате
 
 - summary: |
-    Главная страница чат слишком длинное сообщение
-  requirement: |
-    Проверка отправки длинного сообщения в чат
-  prerequisites:
-    No data
-  test-data: |
-    No data
-  steps:
-    - Ввести длинное сообщение, например, 1000 символов
-    - Нажать на Send
-  expected-result: |
-    Сообщение отправляется в чат, макет сайта не изменился
-
-- summary: |
-    Главная страница отображение он-лайн пользователей 
-  requirement: |
-    Проверка отображения он-лайн пользователей
-  prerequisites:
-    No data
-  test-data: |
-    No data
-  steps:
-    - No date
-  expected-result: |
-    Отображение он-лайн пользователей
-
-- summary: |
-    Главная страница написать личное сообщение
+    Проверка отправки личного сообщения в чат с главной
   requirement: |
     Проверка написания личного сообщения
   prerequisites:
@@ -496,92 +368,100 @@
     - Ввести сообщение
     - Нажать на Send
   expected-result: |
-    Отправится личное сообщение
-
+    Личное сообщение отправлено и отображается в чате
+    
 - summary: |
-    Главная страница создать игру
+    Проверка создания игры с ботом
   requirement: |
-    Проверка содается ли игра
+    Проверка содается ли игра с ботом
   prerequisites:
     No data
   test-data: |
     No data
   steps:
     - Нажать на кнопку CREATE A GAME
-  expected-result: |
-    Откроется окно Create a game
-
-- summary: |
-    Окно Create a game, выбор уровня сложности
-  requirement: |
-    Проверка выбора уровня сложности игры
-  prerequisites:
-    No data
-  test-data: |
-    No data
-  steps:
     - Выбрать Level, например, easy
-  expected-result: |
-    Выбирается уровень сложности игры
-
-- summary: |
-    Окно Create a game, выбор оппонента
-  requirement: |
-    Проверка выбора оппонента
-  prerequisites:
-    Выбран уровень сложности
-  test-data: |
-    No data
-  steps:
     - Выбрать Game Type, например, With a bot
-  expected-result: |
-    Выбирается оппонент для игры
-
-- summary: |
-    Окно Create a game, выбор времени
-  requirement: |
-    Проверка выбора максимального количества времени для игры
-  prerequisites:
-    Выбран уровень сложности и оппонент
-  test-data: |
-    No data
-  steps:
     - Выбрать Time control, например, 10 minutes
+    - Ввести название игры, например, rect_area
   expected-result: |
-    Выбирается длительность игры по времени
+    Игра с ботом успешно создана
 
 - summary: |
-    Окно Create a game, выбор игры/задания по названию
+    Проверка игры с уровнем сложности medium
   requirement: |
-    Проверка выбора игры/задания по названию 
+    Проверка создания игры с уровнем сложности medium
   prerequisites:
-    Выбран уровень сложности, оппонент и время
+    No data
   test-data: |
     No data
   steps:
+    - Нажать на кнопку CREATE A GAME
+    - Выбрать Level, например, medium
+    - Выбрать Game Type, например, With a bot
+    - Выбрать Time control, например, 10 minutes
+    - Ввести название игры, например, anagram_finder
+  expected-result: |
+    Игра с выбранным уровнем сложности успешно создана
+
+- summary: |
+    Проверка отправки приглашения выбранному оппоненту
+  requirement: |
+    Проверка отправки приглашения выбранному оппоненту
+  prerequisites:
+    no data
+  test-data: |
+    No data
+  steps:
+    - Нажать на кнопку CREATE A GAME
+    - Выбрать Level, например, medium
+    - Выбрать Game Type, например, With a friend
+    - Выбрать Time control, например, 10 minutes
+    - Выбрать Choose opponent
+    - Ввести название игры, например, anagram_finder
+  expected-result: |
+    Приглашение на игру отправлено
+
+- summary: |
+    Проверка создания игры по названию
+  requirement: |
+    Проверка создания игры по названию
+  prerequisites:
+    No data
+  test-data: |
+    No data
+  steps:
+    - Нажать на кнопку CREATE A GAME
+    - Выбрать Level, например, easy
+    - Выбрать Game Type, например, With a bot
+    - Выбрать Time control, например, 10 minutes
     - Ввести название игры, например, rect_area
     - Нажать Create battle
   expected-result: |
-    Открывается страница игры game page
+    Выбранная игра успешно создана
 
 - summary: |
-    Окно Create a game, выбор игры/задания по тегу
+    Проверка создания игры по тегу
   requirement: |
-    Проверка выбора игры/задания по тегу
+    Проверка создания игры по тегу
   prerequisites:
-    Выбран уровень сложности, оппонент и время
+    No data
   test-data: |
     No data
   steps:
+    - Нажать на кнопку CREATE A GAME
+    - Выбрать Level, например, easy
+    - Выбрать Game Type, например, With a bot
+    - Выбрать Time control, например, 10 minutes
     - Выбрать тег, например, math 
     - Нажать на поле ввода
     - Выбрать игру, например, rect_area
     - Нажать Create battle
   expected-result: |
-    Открывается страница игры game page
+    Выбранная игра успешно создана
 
 - summary: |
-    Game page, поле Task
+    Проверка отображения описания задания в созданной игре
   requirement: |
     Проверка есть ли описание задания
   prerequisites:
@@ -591,10 +471,10 @@
   steps:
     - Нажать на Task
   expected-result: |
-    Написано описание задания/игры
+    Описание задания/игры отображается
 
 - summary: |
-    Game page, поле OUTPUT
+    Проверка кода в игре поле OUTPUT
   requirement: |
     Выполняется ли проверка написанного кода
   prerequisites:
@@ -607,17 +487,17 @@
     Выходит результат игры, например, passed или failure
 
 - summary: |
-    Game page, выбор языка программирования
+    Проверка выбора пользователем языка программирования
   requirement: |
     Проверка выбора языка программирования
   prerequisites:
-    Выбрана игра, например, rect_area
+    Язык программирования по умолчанию JS. Создана игра, например, rect_area
   test-data: |
     No data
   steps:
     - Выбрать язык программирования, например, Python
   expected-result: |
-    Выбирается язык программирования
+    Язык программирования сменился, например, на Python
 
 - summary: |
     Кнопка Codebattle в шапке страницы
@@ -633,7 +513,7 @@
     Открывается главная страница
 
 - summary: |
-    Завершенные игры пользователя
+    Проверка списка завершенных игр пользователя
   requirement: |
     Проверка показываются ли завершенные игры пользователя
   prerequisites:
@@ -645,7 +525,7 @@
     - Нажать на My Profile в выпадающем меню
     - Нажать на COMPLETED GAMES
   expected-result: |
-    Открывается таблица игр, которые завершил пользователь
+    Отображается список игр, которые завершил пользователь
 
 - summary: |
     Изменение имени в настройках пользователя
@@ -728,7 +608,7 @@
     Изменится уровень громкости звука
 
 - summary: |
-    Отвзять аккаунт Github
+    Отвязать аккаунт Github
   requirement: |
     Проверка работает ли ссылка Unlink Github
   prerequisites:
